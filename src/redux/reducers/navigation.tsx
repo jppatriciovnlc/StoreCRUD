@@ -1,7 +1,7 @@
 import { ACTUAL_PAGE } from '../actions/types';
 
 const initialState = {
-    page: 'Dashboard'
+    page: window.location.pathname === '/'? 'Dashboard': window.location.pathname
 }
 
 const reducer = (state = initialState, action) => {
