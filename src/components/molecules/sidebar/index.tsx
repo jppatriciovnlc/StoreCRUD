@@ -1,7 +1,7 @@
 import { Logo, HorizontalLine, Navlink } from '../../atoms';
 import * as S from './styled';
 import { MdDashboard, MdTableView, MdLogout,MdOutlineAssignment } from 'react-icons/md'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '../../../hooks/reduxHooks';
 import { setPage } from '../../../redux/actions/navigation';
@@ -14,6 +14,18 @@ const Sidebar = (props) => {
     const dispatch = useAppDispatch();
 
     const { page } = useAppSelector((state) => state.navigation)
+
+    useEffect(() => {
+        if(window.location.pathname === '/' || window.location.pathname === '/dashboard'){
+            setSelected('Dashboard')
+        }
+        else if(window.location.pathname === '/produtos'){
+            setSelected('Produtos')
+        }
+        else if(window.location.pathname === '/categorias'){
+            setSelected('Categorias')
+        }
+    },[])
 
     const handleClick = (item:string, link: string) => {
         setSelected(item)
