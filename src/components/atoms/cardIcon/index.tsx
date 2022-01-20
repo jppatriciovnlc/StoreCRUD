@@ -2,8 +2,7 @@ import * as S from './styled';
 
 const CardIcon = (props) => {    
 
-    console.log(props)
-
+    
     return(
         <S.Container
             color1={props.color1 ? props.color1 : '#000000'}

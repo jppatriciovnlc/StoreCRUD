@@ -2,19 +2,27 @@ import { Logo, HorizontalLine, Navlink } from '../../atoms';
 import * as S from './styled';
 import { MdDashboard, MdTableView, MdLogout,MdOutlineAssignment } from 'react-icons/md'
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { useAppSelector, useAppDispatch } from '../../../hooks/reduxHooks';
+import { setPage } from '../../../redux/actions/navigation';
 
 const Sidebar = (props) => {
 
     const [selected, setSelected] = useState('Dashboard')
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const dispatch = useAppDispatch();
+
+    const { page } = useAppSelector((state) => state.navigation)
 
     const handleClick = (item:string, link: string) => {
         setSelected(item)
+        dispatch(setPage(item))
         navigate(link)
     }
 
+    
+    console.log(page)
     
 
     return(

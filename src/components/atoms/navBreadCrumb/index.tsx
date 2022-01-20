@@ -8,10 +8,10 @@ const NavBreadCrumb = (props) => {
             <S.Row1>
                 <S.Title1><MdHome/></S.Title1>
                 <S.Title1>/</S.Title1>
-                <S.Title1>Dashboard</S.Title1>
+                <S.Title1>{props.page}</S.Title1>
                    
             </S.Row1>
-            <S.Row2>Dashboard</S.Row2>
+            <S.Row2>{props.page}</S.Row2>
         </S.Container>
     )
 }
