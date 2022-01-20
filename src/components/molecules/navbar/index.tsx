@@ -9,6 +9,8 @@ const Navbar = (props) => {
     const [searchData, setSearchData] =useState('')
     const { page } = useAppSelector((state) => state.navigation)
 
+    console.log(searchData)
+
     return(
         <S.Container>
             <NavBreadCrumb page={page}/>
