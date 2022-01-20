@@ -1,5 +1,5 @@
 import * as S from './styled';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { Navbar, Sidebar } from '../../components/molecules';
 import Dashboard from './dashboard';
 
@@ -13,6 +13,10 @@ const LoggedArea = (props) => {
                 <Routes>
                     <Route  
                         path="/" 
+                        element={<Dashboard {...props}/>}
+                    /> 
+                    <Route  
+                        path="/dashboard" 
                         element={<Dashboard {...props}/>}
                     /> 
                 </Routes>

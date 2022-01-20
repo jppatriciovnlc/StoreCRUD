@@ -13,4 +13,5 @@ export const Section1 = styled.div`
     flex-direction: column;
     padding: 10px;
     padding-left: 20px;
+    width: 100%;
 `
