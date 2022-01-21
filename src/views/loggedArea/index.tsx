@@ -1,7 +1,11 @@
 import * as S from './styled';
 import { Route, Routes } from 'react-router-dom'
 import { Navbar, Sidebar } from '../../components/molecules';
-import Dashboard from './dashboard';
+import React from 'react';
+
+
+const Dashboard = React.lazy(() => import('./dashboard'));
+const Products = React.lazy(() => import('./products'));
 
 const LoggedArea = (props) => {
 
@@ -18,6 +22,10 @@ const LoggedArea = (props) => {
                     <Route  
                         path="/dashboard" 
                         element={<Dashboard {...props}/>}
+                    /> 
+                    <Route  
+                        path="/produtos" 
+                        element={<Products {...props}/>}
                     /> 
                 </Routes>
             
